@@ -4,7 +4,7 @@ import * as cdk from '@aws-cdk/core';
 import * as extensions from '../../extensions';
 
 const app = new cdk.App();
-const stack = new cdk.Stack(app, 'access-origin-by-weight-rate');
+const stack = new cdk.Stack(app, 'modify-response-status-code');
 
 // create the cloudfront distribution with extension(s)
 const modifyResponseStatusCode = new extensions.ModifyResponseHeader(stack, 'modifyResponseStatusCode');
