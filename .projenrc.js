@@ -1,5 +1,5 @@
 const { AwsCdkConstructLibrary } = require('projen');
-const { Automation } = require('projen-automate-it');
+// const { Automation } = require('projen-automate-it');
 
 const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
 
@@ -7,7 +7,7 @@ const project = new AwsCdkConstructLibrary({
   author: 'Pahud Hsieh',
   authorAddress: 'pahudnet@gmail.com',
   description: 'CDK construct library for CloudFront Extensions',
-  cdkVersion: '1.73.0',
+  cdkVersion: '1.95.1',
   defaultReleaseBranch: 'main',
   jsiiFqn: 'projen.AwsCdkConstructLibrary',
   name: 'cdk-cloudfront-plus',
@@ -47,12 +47,12 @@ const project = new AwsCdkConstructLibrary({
   testdir: 'src/__tests__',
 });
 
-const automation = new Automation(project, {
-  automationToken: AUTOMATION_TOKEN,
-});
-automation.autoApprove();
-automation.autoMerge();
-automation.projenYarnUpgrade();
+// const automation = new Automation(project, {
+//   automationToken: AUTOMATION_TOKEN,
+// });
+// automation.autoApprove();
+// automation.autoMerge();
+// automation.projenYarnUpgrade();
 
 const common_exclude = [
   'cdk.out',

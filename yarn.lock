@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@aws-cdk/assert@^1.73.0":
+"@aws-cdk/assert@^1.95.1":
   version "1.95.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/assert/-/assert-1.95.1.tgz#15e801e41705a3eb15abdbaa3bdab86e302e9861"
   integrity sha512-lnW0xs8SXCF+r1sVWcBxhgMEVNP/s0Bhp8WJSlaBC823RGknZ9zSuehtZrTMdjh8AncDa3klvwdCvp/za1WQ2A==
@@ -66,7 +66,7 @@
     "@aws-cdk/cx-api" "1.95.1"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-cloudfront-origins@^1.73.0":
+"@aws-cdk/aws-cloudfront-origins@^1.95.1":
   version "1.95.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-cloudfront-origins/-/aws-cloudfront-origins-1.95.1.tgz#5e33d12a892e4af710b8ddcd064f93aadb4018cb"
   integrity sha512-NsBBVQuHS2taY8eV5Nv73Yb58H3s3IkX4U35zX89Tatl/mdwdjw7+N/rhordhoEiCvfJngBPxRBrlb+I7R6yFw==
@@ -78,7 +78,7 @@
     "@aws-cdk/core" "1.95.1"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-cloudfront@1.95.1", "@aws-cdk/aws-cloudfront@^1.73.0":
+"@aws-cdk/aws-cloudfront@1.95.1", "@aws-cdk/aws-cloudfront@^1.95.1":
   version "1.95.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-cloudfront/-/aws-cloudfront-1.95.1.tgz#568c822d04405d834fbad0ef1787fff5bc6f3561"
   integrity sha512-i6YbTd+bgjbm0d86RWDlKwlklDtZZAGV3iUVBnEMZgseeJUu1slar+vC4yExkPqAX+bpDR9HJkpbViTP22A3Eg==
@@ -211,7 +211,7 @@
     "@aws-cdk/cx-api" "1.95.1"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-lambda-nodejs@^1.73.0":
+"@aws-cdk/aws-lambda-nodejs@^1.95.1":
   version "1.95.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-lambda-nodejs/-/aws-lambda-nodejs-1.95.1.tgz#3746e052c1cfa59a8cb65d21538b7e1f13df3f14"
   integrity sha512-q0vwVSeOJ+XStfL49ma317mnuw7H2DsGz7XP/X4rCzes2xReXbN99BcYtn2IoAdpTwHA1dYVNeYXNX9gqwmlqw==
@@ -220,7 +220,7 @@
     "@aws-cdk/core" "1.95.1"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-lambda@1.95.1", "@aws-cdk/aws-lambda@^1.73.0":
+"@aws-cdk/aws-lambda@1.95.1", "@aws-cdk/aws-lambda@^1.95.1":
   version "1.95.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-lambda/-/aws-lambda-1.95.1.tgz#9a4b16c462941d165f315b04850099451ec7269d"
   integrity sha512-/FoFx+oN1AFTCdchfDlwBU2nADY1J2dguRtsjcj1jemehoD44ybj3OXA55lTfaAyQYSkr5MkJBmztVpA+yerSg==
@@ -282,7 +282,7 @@
     "@aws-cdk/cx-api" "1.95.1"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-s3-deployment@^1.73.0":
+"@aws-cdk/aws-s3-deployment@^1.95.1":
   version "1.95.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-s3-deployment/-/aws-s3-deployment-1.95.1.tgz#fe332c3c38af980b25cd7182e638beee3008ddfe"
   integrity sha512-I7y7f73SjAXUicIeNxjz9qX2aYJ+8dXm5bbplySV1YRHyrI+YcfmdcPaE403W0fLDh3ciWYwU0djYn9AQ7OVoQ==
@@ -297,7 +297,7 @@
     "@aws-cdk/lambda-layer-awscli" "1.95.1"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-s3@1.95.1", "@aws-cdk/aws-s3@^1.73.0":
+"@aws-cdk/aws-s3@1.95.1", "@aws-cdk/aws-s3@^1.95.1":
   version "1.95.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-s3/-/aws-s3-1.95.1.tgz#4468c754258e59b659e8fbd50a9f2fba9e515d24"
   integrity sha512-An03HaHx+pmtseXrfaMHySJyWuZI5BquNfxgQVrW1Ix5+aeHGmlgLdkhm7BRXhGvn6En6yiDo50TKM9IeUsiZg==
@@ -309,7 +309,7 @@
     "@aws-cdk/cx-api" "1.95.1"
     constructs "^3.3.69"
 
-"@aws-cdk/aws-sam@^1.73.0":
+"@aws-cdk/aws-sam@^1.95.1":
   version "1.95.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-sam/-/aws-sam-1.95.1.tgz#3e4a7c5bbfeef34873fc64f75ce2aace33b355bb"
   integrity sha512-OTAyPYzZ0qMiqbJRryXTumf8qbeWCpRQV9FraoTS0quo6HA7ljU6ZkVQrNufG2zfO9Dv6PM8OE7mgG+CHgA2rQ==
@@ -387,7 +387,7 @@
     string-width "^4.2.2"
     table "^6.0.7"
 
-"@aws-cdk/core@1.95.1", "@aws-cdk/core@^1.73.0":
+"@aws-cdk/core@1.95.1", "@aws-cdk/core@^1.95.1":
   version "1.95.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/core/-/core-1.95.1.tgz#5ef20be2ce95c42b41dd458596c64784dfc2ccbb"
   integrity sha512-YO7j/Ev/5qpJv9mWX0mWTY7SiWqhum3S7ygJNNpkaThDplegLCa71IBbJlR6uK5vmkpJ30oir5XuO57gyQ/ORg==
@@ -1080,7 +1080,7 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^26.0.22":
+"@types/jest@^26.0.20":
   version "26.0.22"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.22.tgz#8308a1debdf1b807aa47be2838acdcd91e88fbe6"
   integrity sha512-eeWwWjlqxvBxc4oQdkueW5OF/gtfSceKk4OnOAGlUSwS/liBRtZppbJuz1YkgbrbfGOoeBHun9fOvXnjNwrSOw==
