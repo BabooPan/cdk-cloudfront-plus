@@ -7,7 +7,7 @@ const app = new cdk.App();
 const stack = new cdk.Stack(app, 'access-origin-by-weight-rate');
 
 // create the cloudfront distribution with extension(s)
-const modifyResponseStatusCode = new extensions.SecurtyHeaders(stack, 'modifyResponseStatusCode');
+const modifyResponseStatusCode = new extensions.ModifyResponseHeader(stack, 'modifyResponseStatusCode');
 
 // create the cloudfront distribution with extension(s)
 const dist = new cf.Distribution(stack, 'dist', {
