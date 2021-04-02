@@ -1,5 +1,3 @@
-'use strict';
-
 const content = `
 <\!DOCTYPE html>
 <html lang="en">
@@ -8,12 +6,14 @@ const content = `
     <title>Simple Lambda@Edge Static Content Response</title>
   </head>
   <body>
-    <p>Hello from Lambda@Edge!</p>
+    <p>Hello from Lambda@Edge!!</p>
   </body>
 </html>
 `;
 
-exports.handler = (event, context, callback) => {
+export async function handler(event: any, context: any) {
+  console.log('Event: %j', event)
+  console.log('Context: %j', context)
   /*
    * Generate HTTP OK response using 200 status code with HTML body.
    */
@@ -32,5 +32,5 @@ exports.handler = (event, context, callback) => {
     },
     body: content,
   };
-  callback(null, response);
+  return response
 };
