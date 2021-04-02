@@ -48,6 +48,26 @@ export class ModifyResponseHeader extends ServerlessApp implements IExtensions {
     this.eventType = cf.LambdaEdgeEventType.ORIGIN_RESPONSE;
   }
 }
+/**
+ * The modify response header extension
+ * @see https://github.com/awslabs/aws-cloudfront-extensions/tree/main/edge/nodejs/modify-response-status-code
+ * @see https://console.aws.amazon.com/lambda/home?region=us-east-1#/create/app?applicationId=arn:aws:serverlessrepo:us-east-1:418289889111:applications/modify-response-status-code
+ */
+ export class ModifyResponseStatusCode extends ServerlessApp implements IExtensions {
+  readonly functionArn: string;
+  readonly functionVersion: lambda.Version;
+  readonly eventType: cf.LambdaEdgeEventType;
+  constructor(scope: cdk.Construct, id: string) {
+    super(scope, id, {
+      applicationId: 'arn:aws:serverlessrepo:us-east-1:418289889111:applications/modify-response-status-code',
+      semanticVersion: '1.0.0',
+    });
+    const stack = cdk.Stack.of(scope);
+    this.functionArn = this.resource.getAtt('Outputs.ModifyResponseStatusCodeFunction').toString();
+    this.functionVersion = bumpFunctionVersion(stack, id, this.functionArn);
+    this.eventType = cf.LambdaEdgeEventType.ORIGIN_RESPONSE;
+  }
+}
 
 /**
  * Construct properties for AntiHotlinking
@@ -104,26 +124,6 @@ export class SecurtyHeaders extends ServerlessApp implements IExtensions {
   }
 }
 
-/**
- * The modify response header extension
- * @see https://github.com/awslabs/aws-cloudfront-extensions/tree/main/edge/nodejs/modify-response-status-code
- * @see https://console.aws.amazon.com/lambda/home?region=us-east-1#/create/app?applicationId=arn:aws:serverlessrepo:us-east-1:418289889111:applications/modify-response-status-code
- */
- export class ModifyResponseStatusCode extends ServerlessApp implements IExtensions {
-  readonly functionArn: string;
-  readonly functionVersion: lambda.Version;
-  readonly eventType: cf.LambdaEdgeEventType;
-  constructor(scope: cdk.Construct, id: string) {
-    super(scope, id, {
-      applicationId: 'arn:aws:serverlessrepo:us-east-1:418289889111:applications/modify-response-status-code',
-      semanticVersion: '1.0.0',
-    });
-    const stack = cdk.Stack.of(scope);
-    this.functionArn = this.resource.getAtt('Outputs.ModifyResponseStatusCodeFunction').toString();
-    this.functionVersion = bumpFunctionVersion(stack, id, this.functionArn);
-    this.eventType = cf.LambdaEdgeEventType.ORIGIN_RESPONSE;
-  }
-}
 
 export interface CustomProps {
   /**
@@ -311,6 +311,27 @@ export class SelectOriginByViwerCountry extends Custom {
       solutionId: '',
       templateDescription: 'Cloudfront extension with AWS CDK - Selective Origin by Viewer Country',
     });
+  }
+};
+
+/**
+ * Update the response status to 200 and generate static body content to return to the viewer
+ *
+ *  use case - see https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-examples.html#lambda-examples-update-error-status-examples
+ */
+ export class UpdateErrorStatusCode extends Custom {
+  readonly lambdaFunction: lambda.Version;
+  constructor(scope: cdk.Construct, id: string) {
+
+    super(scope, id, {
+      runtime: lambda.Runtime.NODEJS_12_X,
+      handler: 'index.handler',
+      code: lambda.AssetCode.fromAsset(`${EXTENSION_ASSETS_PATH}/update-the-error-status-code`),
+      eventType: cf.LambdaEdgeEventType.ORIGIN_RESPONSE,
+      solutionId: '',
+      templateDescription: 'Cloudfront extension with AWS CDK - Update the response status to 200 and generate static body content to return to the viewer.',
+    });
+    this.lambdaFunction = this.functionVersion;
   }
 };
 
