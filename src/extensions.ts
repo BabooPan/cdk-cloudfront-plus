@@ -109,9 +109,10 @@ export class SecurtyHeaders extends ServerlessApp implements IExtensions {
  * @see https://github.com/awslabs/aws-cloudfront-extensions/tree/main/edge/nodejs/modify-response-status-code
  * @see https://console.aws.amazon.com/lambda/home?region=us-east-1#/create/app?applicationId=arn:aws:serverlessrepo:us-east-1:418289889111:applications/modify-response-status-code
  */
- export class ModifyResponseStatusCode extends ServerlessApp implements IExtensions {
+export class ModifyResponseStatusCode extends ServerlessApp implements IExtensions {
   readonly functionArn: string;
   readonly functionVersion: lambda.Version;
+  // readonly lambdaFunction: lambda.Version;
   readonly eventType: cf.LambdaEdgeEventType;
   constructor(scope: cdk.Construct, id: string) {
     super(scope, id, {
@@ -121,6 +122,7 @@ export class SecurtyHeaders extends ServerlessApp implements IExtensions {
     const stack = cdk.Stack.of(scope);
     this.functionArn = this.resource.getAtt('Outputs.ModifyResponseStatusCodeFunction').toString();
     this.functionVersion = bumpFunctionVersion(stack, id, this.functionArn);
+    // this.lambdaFunction = this.functionVersion;
     this.eventType = cf.LambdaEdgeEventType.ORIGIN_RESPONSE;
   }
 }
